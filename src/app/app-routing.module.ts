@@ -14,6 +14,16 @@ const routes: Routes = [
       import('./views/home/home.module').then(m => m.HomeModule)
   },
   {
+    path: 'student',
+    loadChildren: () =>
+      import('./views/student-panel/student-panel.module').then(m => m.StudentPanelModule)
+  },
+  {
+    path: 'admin',
+    loadChildren: () =>
+      import('./views/admin-panel/admin-panel.module').then(m => m.AdminPanelModule)
+  },
+  {
     path: '',
     pathMatch: 'full',
     loadChildren: () =>
