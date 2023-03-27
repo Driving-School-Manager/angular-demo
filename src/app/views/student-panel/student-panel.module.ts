@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { StudentPanelComponent } from "./student-panel.component";
 import { RouterModule } from "@angular/router";
 import { ListboxModule } from 'primeng/listbox';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -16,7 +18,8 @@ import { ListboxModule } from 'primeng/listbox';
         component: StudentPanelComponent,
       }
     ]),
-    ListboxModule
+    ListboxModule,
+    FormsModule
   ]
 })
 export class StudentPanelModule { }

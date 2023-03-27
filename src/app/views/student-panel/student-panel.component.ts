@@ -10,6 +10,7 @@ import { NavBarElement } from 'src/app/interfaces/NavBarElement';
 export class StudentPanelComponent implements OnInit {
 
   items: NavBarElement[] = [];
+  selectedItem?: NavBarElement;
 
   ngOnInit() {
     this.items = [
@@ -18,6 +19,10 @@ export class StudentPanelComponent implements OnInit {
       { name: 'Płatności' },
       { name: 'Archiwum' }
     ];
+  }
+
+  getItem(){
+    console.log(this.selectedItem);
   }
 
 }

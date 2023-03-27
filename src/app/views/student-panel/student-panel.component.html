@@ -2,8 +2,8 @@
     <nav>
         <h2>Panel Kursanta</h2>
         <div class="sidebar-content">
-            <p-listbox class="p-listbox-container"[options]="items"  
-            optionLabel="name"></p-listbox>
+            <p-listbox (onClick)="getItem()" class="p-listbox-container" [(ngModel)]="selectedItem" [options]="items"
+            optionLabel="name" ></p-listbox>
         </div>
     </nav>
 
