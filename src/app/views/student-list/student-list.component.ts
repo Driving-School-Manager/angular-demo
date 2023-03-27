@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Student} from "../../model/student";
+import {StudentService} from "../../service/student.service";
 
 @Component({
   selector: 'app-student-list',
@@ -8,21 +9,13 @@ import {Student} from "../../model/student";
 })
 export class StudentListComponent implements OnInit{
   students: Student[] = [];
-  constructor(/*private studentService = StudentService*/) {
+  constructor(private studentService: StudentService) {
 
   }
   ngOnInit(): void {
-    //TODO: refactor it to get data from Student Service
-    this.students = [
-      {id: 1, firstName: 'Jan', lastName: 'Kowalski', email: "1@mail.com",isActive: true},
-      {id: 2, firstName: 'Bob', lastName: 'Dylan', email: "2@mail.com",isActive: false},
-      {id: 3, firstName: 'John', lastName: 'Smith', email: "3@mail.com",isActive: true},
-    ];
-
-
-    // this.studentService.findAll().subscribe(data => {
-    //   this.students = data;
-    // })
+    this.studentService.findAll().subscribe(data => {
+      this.students = data;
+    })
 
   }
 

@@ -13,6 +13,7 @@ export class StudentService {
     this.studentUrl = 'http://localhost:8080/students'
   }
 
+  // public findAll(): Observable<Student[]> {
   public findAll(): Observable<Student[]> {
     return this.http.get<Student[]>(this.studentUrl);
   }

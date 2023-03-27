@@ -6,6 +6,7 @@ import {AppComponent} from './app.component';
 import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
 import {PrimeNGConfig} from "primeng/api";
+import {HttpClientModule} from "@angular/common/http"
 
 const primeNGConfigFactory = (primeConfig: PrimeNGConfig) => () => {
   primeConfig.ripple = true;
@@ -20,6 +21,7 @@ const primeNGConfigFactory = (primeConfig: PrimeNGConfig) => () => {
     BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
+    HttpClientModule,
   ],
   providers: [
     {
