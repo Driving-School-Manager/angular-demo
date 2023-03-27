@@ -20,6 +20,11 @@ const routes: Routes = [
       import('./views/landing/landing.module').then(m => m.LandingModule)
   },
   {
+    path: 'studentList',
+    loadChildren: () =>
+      import('./views/student-list/student-list.module').then(m => m.StudentListModule)
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./views/not-found/not-found.module').then(m => m.NotFoundModule)
