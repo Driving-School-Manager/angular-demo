@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { AdminPanelComponent } from './admin-panel.component';
 import { ListboxModule } from 'primeng/listbox';
 import { RouterModule } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+
 
 
 
@@ -13,6 +15,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     ListboxModule,
+    FormsModule,
     RouterModule.forChild([
       {
         path: '',

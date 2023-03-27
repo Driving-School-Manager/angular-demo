@@ -9,6 +9,7 @@ import { NavBarElement } from 'src/app/interfaces/NavBarElement';
 export class AdminPanelComponent {
 
   items: NavBarElement[] = [];
+  selectedItem?: NavBarElement;
 
   ngOnInit() {
     this.items = [
@@ -17,5 +18,9 @@ export class AdminPanelComponent {
       { name: 'Instruktorzy' },
       { name: 'Pojazdy' }
     ];
+  }
+
+  getItem(){
+    console.log(this.selectedItem);
   }
 }

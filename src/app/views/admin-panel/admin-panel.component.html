@@ -2,7 +2,8 @@
     <nav>
         <h2>Panel Administratora</h2>
         <div class="sidebar-content">
-            <p-listbox class="p-listbox-container"[options]="items"  
+            <p-listbox (onClick)="getItem()" class="p-listbox-container"
+            [options]="items" [(ngModel)]="selectedItem"  
             optionLabel="name"></p-listbox>
         </div>
     </nav>
