@@ -1,24 +1,22 @@
 <p-table [value]="students" [tableStyle]="{ 'min-width': '50rem' }">
   <ng-template pTemplate="header">
     <tr>
-      <th>Id</th>
-      <th>First Name</th>
-      <th>Last Name</th>
+      <th>imię</th>
+      <th>nazwisko</th>
       <th>E-mail</th>
-      <th>active</th>
-      <th>details</th>
-      <th>delete</th>
+      <th>szczegóły</th>
+      <th>usuń</th>
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-student>
     <tr>
-      <td>{{ student.id }}</td>
       <td>{{ student.firstName }}</td>
       <td>{{ student.lastName }}</td>
       <td>{{ student.email }}</td>
-      <td>{{ student.isActive }}</td>
       <td><a routerLink="/students/{{student.id}}">details</a></td>
-      <td><button>delete</button></td>
+      <td><button>usuń</button></td>
     </tr>
   </ng-template>
 </p-table>
+
+

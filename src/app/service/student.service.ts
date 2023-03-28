@@ -18,4 +18,8 @@ export class StudentService {
     return this.http.get<Student[]>(this.studentUrl);
   }
 
+  public findById(id: number): Observable<Student>{
+    return this.http.get<Student>(this.studentUrl+'/'+id);
+  }
+
 }
