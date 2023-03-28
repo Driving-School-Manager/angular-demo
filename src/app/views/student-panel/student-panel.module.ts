@@ -4,6 +4,8 @@ import { StudentPanelComponent } from "./student-panel.component";
 import { RouterModule } from "@angular/router";
 import { ListboxModule } from 'primeng/listbox';
 import { FormsModule } from '@angular/forms';
+import { MenuModule } from 'primeng/menu';
+
 
 
 
@@ -12,6 +14,7 @@ import { FormsModule } from '@angular/forms';
   declarations: [StudentPanelComponent],
   imports: [
     CommonModule,
+    MenuModule,
     RouterModule.forChild([
       {
         path: '',

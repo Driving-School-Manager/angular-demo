@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 import { NavBarElement } from 'src/app/model/NavBarElement';
 
 
@@ -9,20 +10,14 @@ import { NavBarElement } from 'src/app/model/NavBarElement';
 })
 export class StudentPanelComponent implements OnInit {
 
-  items: NavBarElement[] = [];
-  selectedItem?: NavBarElement;
+  items: MenuItem[] = [];
 
   ngOnInit() {
     this.items = [
-      { name: 'Strona główna' },
-      { name: 'Jazdy' },
-      { name: 'Płatności' },
-      { name: 'Archiwum' }
+      { label: 'Strona główna' },
+      { label: 'Jazdy', icon: '', routerLink:''},
+      { label: 'Płatności', icon: '', routerLink:''},
+      { label: 'Archiwum', icon: '', routerLink:'' }
     ];
   }
-
-  getItem(){
-    console.log(this.selectedItem);
-  }
-
 }

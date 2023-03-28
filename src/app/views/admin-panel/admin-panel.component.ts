@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { MenuItem } from 'primeng/api';
 import { NavBarElement } from 'src/app/model/NavBarElement';
 
 @Component({
@@ -8,19 +9,18 @@ import { NavBarElement } from 'src/app/model/NavBarElement';
 })
 export class AdminPanelComponent {
 
-  items: NavBarElement[] = [];
-  selectedItem?: NavBarElement;
+  items: MenuItem[] = [];
 
   ngOnInit() {
     this.items = [
-      { name: 'Strona główna' },
-      { name: 'Kursanci' },
-      { name: 'Instruktorzy' },
-      { name: 'Pojazdy' }
+      { label: 'Strona główna' },
+      { label: 'Kursanci'},
+      { label: 'Instruktorzy'},
+      { label: 'Pojazdy' }
     ];
   }
 
   getItem(){
-    console.log(this.selectedItem);
+    // console.log(this.selectedItem);
   }
 }

@@ -1,16 +1,10 @@
 <div class="container">
     <nav>
-        <h2>Panel Administratora</h2>
         <div class="sidebar-content">
-            <p-listbox (onClick)="getItem()" class="p-listbox-container"
-            [options]="items" [(ngModel)]="selectedItem"  
-            optionLabel="name"></p-listbox>
+            <h2>Panel Administratora</h2>
+            <div class="sidebar-content-menu">
+                <p-menu class="navbar-menu" [model]="items"></p-menu>
+            </div>
         </div>
     </nav>
-
-    <div class="main-content-wraper">
-        <div class="top-bar-content">
-            <h1>Strona główna</h1>
-        </div>
-    </div>
 </div>
