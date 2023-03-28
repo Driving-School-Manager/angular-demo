@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavBarElement } from 'src/app/interfaces/NavBarElement';
+import { NavBarElement } from 'src/app/model/NavBarElement';
 
 
 @Component({

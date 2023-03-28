@@ -24,6 +24,11 @@ const routes: Routes = [
       import('./views/admin-panel/admin-panel.module').then(m => m.AdminPanelModule)
   },
   {
+    path: 'vehicle-list',
+    loadChildren: () =>
+      import('./views/vehicle-list/vehicle-list.module').then(m => m.VehicleListModule)
+  },
+  {
     path: '',
     pathMatch: 'full',
     loadChildren: () =>
