@@ -2,13 +2,17 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { VehicleListComponent } from './vehicle-list.component';
-import { AdminPanelModule } from '../admin-panel/admin-panel.module';
+import { TableModule } from 'primeng/table';
+
+
 
 @NgModule({
-  declarations: [VehicleListComponent],
+  declarations: [
+    VehicleListComponent,
+  ],
   imports: [
     CommonModule,
-    AdminPanelModule,
+    TableModule,
     RouterModule.forChild([
       {
         path: '',

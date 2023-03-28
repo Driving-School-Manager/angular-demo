@@ -14,14 +14,9 @@ const routes: Routes = [
       import('./views/home/home.module').then(m => m.HomeModule)
   },
   {
-    path: 'student',
+    path: 'navbar',
     loadChildren: () =>
-      import('./views/student-panel/student-panel.module').then(m => m.StudentPanelModule)
-  },
-  {
-    path: 'admin',
-    loadChildren: () =>
-      import('./views/admin-panel/admin-panel.module').then(m => m.AdminPanelModule)
+      import('./views/navbar-panel/navbar-panel.module').then(m => m.NavbarPanelModule)
   },
   {
     path: 'vehicle-list',

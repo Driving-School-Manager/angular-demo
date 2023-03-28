@@ -1,1 +1,18 @@
-<app-vehicle-list></app-vehicle-list>
+<p-table [value]="vehicles" [tableStyle]="{ 'min-width': '50rem' }">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>Brand</th>
+            <th>Type</th>
+            <th>Year of Fabrication</th>
+            <th>Status</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-vehicle>
+        <tr>
+            <td>{{ vehicle.brand }}</td>
+            <td>{{ vehicle.transmissionType }}</td>
+            <td>{{ vehicle.yearOfFabrication }}</td>
+            <td>{{ vehicle.status }}</td>
+        </tr>
+    </ng-template>
+</p-table>
