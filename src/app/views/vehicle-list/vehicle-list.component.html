@@ -1,18 +1,36 @@
-<p-table [value]="vehicles" [tableStyle]="{ 'min-width': '50rem' }">
-    <ng-template pTemplate="header">
-        <tr>
-            <th>Brand</th>
-            <th>Type</th>
-            <th>Year of Fabrication</th>
-            <th>Status</th>
-        </tr>
-    </ng-template>
-    <ng-template pTemplate="body" let-vehicle>
-        <tr>
-            <td>{{ vehicle.brand }}</td>
-            <td>{{ vehicle.transmissionType }}</td>
-            <td>{{ vehicle.yearOfFabrication }}</td>
-            <td>{{ vehicle.status }}</td>
-        </tr>
-    </ng-template>
-</p-table>
+<p-card header="Pojazdy">
+    <p-table [value]="vehicles" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="caption"></ng-template>
+        <ng-template pTemplate="header">
+            <tr>
+                <th>Brand</th>
+                <th>Type</th>
+                <th>Year of Fabrication</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-vehicle>
+            <tr>
+                <td>{{ vehicle.brand }}</td>
+                <td>{{ vehicle.transmissionType }}</td>
+                <td>{{ vehicle.yearOfFabrication }}</td>
+                <td>{{ vehicle.status }}</td>
+                <td>
+                    <div class="operation-buttons-group">
+                        <p-button icon="pi pi-file-edit"></p-button>
+                        <p-button icon="pi pi-print" styleClass="p-button-help"></p-button>
+                        <p-button icon="pi pi-times" styleClass="p-button-danger"></p-button>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+        <ng-template pTemplate="summary">
+            <div class="card flex justify-content-center">
+                <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
+                    [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+                <p-button (onClick)="reload()" icon="pi pi-refresh"></p-button>
+            </div>
+        </ng-template>
+    </p-table>
+</p-card>

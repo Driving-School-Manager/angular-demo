@@ -9,7 +9,8 @@ import { VehicleService } from 'src/app/services/vehicle.service';
 })
 export class VehicleListComponent implements OnInit{
   vehicles: Vehicle[] = [];
-  
+  first: number = 0;
+  rows: number = 10;
 
   constructor(private vehicleService: VehicleService){  }
 
@@ -19,5 +20,16 @@ export class VehicleListComponent implements OnInit{
       this.vehicles = data;
       console.log(this.vehicles)
     });
+  }
+
+  onPageChange(event: { first: number; rows: number; }){
+    this.first = event.first;
+    this.rows = event.rows;
+  }
+
+  reload(): void{
+    this.vehicleService.getVehicles().subscribe(data =>{
+      this.vehicles = data;
+    })
   }
 }

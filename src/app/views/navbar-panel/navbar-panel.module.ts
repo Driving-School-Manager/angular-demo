@@ -5,9 +5,6 @@ import { NavbarPanelComponent } from './navbar-panel.component';
 import { MenuModule } from 'primeng/menu';
 
 
-
-
-
 @NgModule({
   declarations: [NavbarPanelComponent],
   imports: [
