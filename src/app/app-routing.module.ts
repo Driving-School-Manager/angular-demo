@@ -14,6 +14,16 @@ const routes: Routes = [
       import('./views/home/home.module').then(m => m.HomeModule)
   },
   {
+    path: 'navbar',
+    loadChildren: () =>
+      import('./views/navbar-panel/navbar-panel.module').then(m => m.NavbarPanelModule)
+  },
+  {
+    path: 'vehicle-list',
+    loadChildren: () =>
+      import('./views/vehicle-list/vehicle-list.module').then(m => m.VehicleListModule)
+  },
+  {
     path: '',
     pathMatch: 'full',
     loadChildren: () =>
