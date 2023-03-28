@@ -30,6 +30,16 @@ const routes: Routes = [
       import('./views/landing/landing.module').then(m => m.LandingModule)
   },
   {
+    path: 'students',
+    loadChildren: () =>
+      import('./views/student-list/student-list.module').then(m => m.StudentListModule)
+  },
+  {
+    path: 'students/:id',
+    loadChildren: () =>
+      import('./views/student-details/student-details.module').then(m => m.StudentDetailsModule)
+  },
+  {
     path: '**',
     loadChildren: () =>
       import('./views/not-found/not-found.module').then(m => m.NotFoundModule)
