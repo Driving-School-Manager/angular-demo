@@ -12,10 +12,10 @@ export class NavbarPanelComponent implements OnInit{
 
   ngOnInit() {
     this.items = [
-      { label: 'Strona główna', icon: '', routerLink:''},
-      { label: 'Kursanci', icon: '', routerLink:''},
+      { label: 'Strona główna', icon: '', routerLink:'/'},
+      { label: 'Kursanci', icon: '', routerLink:'/students'},
       { label: 'Instruktorzy', icon: '', routerLink:''},
-      { label: 'Pojazdy', icon: '', routerLink:''}
+      { label: 'Pojazdy', icon: '', routerLink:'/vehicle-list'}
     ];
     console.log('admin-panel')
   }

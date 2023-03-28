@@ -10,6 +10,9 @@ import { MenuModule } from 'primeng/menu';
 
 @NgModule({
   declarations: [NavbarPanelComponent],
+  exports: [
+    NavbarPanelComponent
+  ],
   imports: [
     CommonModule,
     MenuModule,
