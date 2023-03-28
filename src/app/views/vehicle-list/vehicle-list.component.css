@@ -1,5 +1,33 @@
-.operation-buttons-group 
-p-button{
+.operation-buttons-group p-button {
     margin-left: 5px;
-    
+
+}
+
+.operation-buttons-group {
+    text-align: right;
+}
+
+.table-header th {
+    font-weight: bold;
+    background-color: #d4d4d4;
+    text-align: center;
+}
+
+.table-body td {
+    text-align: center;
+}
+
+.card-header-group {
+    margin-left: 13px;
+    margin-right: 13px;
+    height: 40px;
+}
+
+.card-header-group p-button {
+    margin-left: 5px;
+    text-align: right;
+}
+
+.card-header-button-group {
+    margin-top: 15px;
 }

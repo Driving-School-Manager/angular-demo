@@ -1,17 +1,28 @@
-<p-card header="Pojazdy">
+<p-card>
+    <ng-template pTemplate="header">
+        <div class="card-header-group flex justify-content-between">
+            <h2>Pojazdy</h2>
+            <div class="card-header-button-group">
+                <p-button class="add-button" (onClick)="reload()" 
+                icon="pi pi-plus" styleClass="p-button-success"></p-button>
+                <p-button class="refresh-button" (onClick)="reload()" 
+                icon="pi pi-refresh"></p-button>
+            </div>
+        </div>
+    </ng-template>
+
     <p-table [value]="vehicles" [tableStyle]="{ 'min-width': '50rem' }">
-        <ng-template pTemplate="caption"></ng-template>
         <ng-template pTemplate="header">
-            <tr>
-                <th>Brand</th>
-                <th>Type</th>
-                <th>Year of Fabrication</th>
-                <th>Status</th>
-                <th></th>
-            </tr>
+                <tr class="table-header">
+                    <th>Marka</th>
+                    <th>Typ</th>
+                    <th>Rok produkcji</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
         </ng-template>
         <ng-template pTemplate="body" let-vehicle>
-            <tr>
+            <tr class="table-body">
                 <td>{{ vehicle.brand }}</td>
                 <td>{{ vehicle.transmissionType }}</td>
                 <td>{{ vehicle.yearOfFabrication }}</td>
@@ -29,7 +40,6 @@
             <div class="card flex justify-content-center">
                 <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
                     [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
-                <p-button (onClick)="reload()" icon="pi pi-refresh"></p-button>
             </div>
         </ng-template>
     </p-table>
