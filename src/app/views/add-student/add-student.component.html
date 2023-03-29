@@ -1,23 +1,26 @@
 
   <h2>Dodaj kursanta</h2>
   <div>
+    <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+
     <ul>
       <li>
         <label for="student-firstName">imię: </label>
-        <input id="student-firstName"  placeholder="imię">
+        <input id="student-firstName"  placeholder="imię" formControlName="firstName">
       </li>
       <li>
         <label for="student-lastName">nazwisko: </label>
-        <input id="student-lastName"  placeholder="nazwisko">
+        <input id="student-lastName"  placeholder="nazwisko" formControlName="lastName">
       </li>
       <li>
         <label for="student-email">e-mail: </label>
-        <input id="student-email"  placeholder="e-mail">
+        <input id="student-email"  placeholder="e-mail" formControlName="email">
       </li>
       <li>
         <label for="active">aktywny: </label>
-        <p-checkbox inputId="active" [binary]="true" [(ngModel)]="checked"></p-checkbox>
+        <p-checkbox inputId="active" [binary]="true" [(ngModel)]="checked" formControlName="active"></p-checkbox>
       </li>
     </ul>
-
+      <button type="submit"> zatwierdz</button>
+    </form>
   </div>

@@ -19,4 +19,9 @@ export class StudentListComponent implements OnInit{
 
   }
 
+  deleteStudent(id: number){
+    this.students = this.students.filter(s => s.id !== id);
+    this.studentService.deleteById(id).subscribe();
+  }
+
 }

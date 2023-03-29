@@ -4,8 +4,8 @@
       <th>imię</th>
       <th>nazwisko</th>
       <th>E-mail</th>
-      <th>szczegóły</th>
-      <th>usuń</th>
+      <th></th>
+
     </tr>
   </ng-template>
   <ng-template pTemplate="body" let-student>
@@ -13,8 +13,13 @@
       <td>{{ student.firstName }}</td>
       <td>{{ student.lastName }}</td>
       <td>{{ student.email }}</td>
-      <td><a routerLink="/students/{{student.id}}">details</a></td>
-      <td><button>usuń</button></td>
+      <td>
+        <span class="p-buttonset">
+            <button pButton pRipple label="szczegóły" icon="pi pi-search" [routerLink]="student.id"></button>
+            <button pButton pRipple label="usuń" icon="pi pi-trash" (click)="deleteStudent(student.id)"></button>
+        </span>
+      </td>
+
     </tr>
   </ng-template>
 </p-table>

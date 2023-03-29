@@ -1,11 +1,13 @@
-
-<div class="container">
-    <nav>
+<div *ngIf="displayNavbar">
+    <div class="container">
+      <nav>
         <div class="sidebar-content">
-            <h2>Panel Administratora</h2>
-            <div class="sidebar-content-menu">
-                <p-menu class="navbar-menu" [model]="items"></p-menu>
-            </div>
+          <h2>jestem obrazkiem</h2>
+          <div class="sidebar-content-menu">
+            <p-panelMenu class="navbar-menu" [multiple]="false" [model]="items"></p-panelMenu>
+          </div>
         </div>
-    </nav>
+      </nav>
+    </div>
 </div>
+

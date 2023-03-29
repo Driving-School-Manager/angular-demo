@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {Observable} from "rxjs";
+import {catchError, Observable, of} from "rxjs";
 import {Student} from "../model/student";
 import {HttpClient} from "@angular/common/http";
 
@@ -14,11 +14,32 @@ export class StudentService {
   }
 
   public findAll(): Observable<Student[]> {
-    return this.http.get<Student[]>(this.studentUrl);
+    return this.http.get<Student[]>(this.studentUrl)
+      .pipe(
+        catchError(this.handleError<Student[]>([]))
+      );
   }
 
   public findById(id: number): Observable<Student>{
-    return this.http.get<Student>(this.studentUrl+'/'+id);
+    return this.http.get<Student>(this.studentUrl+'/'+id)
+      .pipe(
+        catchError(this.handleError<Student>())
+      );
+  }
+  public deleteById(id: number){
+    return this.http.delete(this.studentUrl+'/'+id);
+  }
+
+  public addStudent(student: Student){
+    return this.http.post(this.studentUrl,student);
+  }
+
+
+  private handleError<T>(result?: T) {
+    return (error: any): Observable<T> => {
+      console.error(error);
+      return of(result as T);
+    };
   }
 
 }

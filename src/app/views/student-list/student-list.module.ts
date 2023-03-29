@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { StudentListComponent } from './student-list.component';
 import {RouterModule} from "@angular/router";
 import { TableModule } from 'primeng/table';
+import {RippleModule} from "primeng/ripple";
+import {ButtonModule} from "primeng/button";
 
 
 
@@ -18,7 +20,9 @@ import { TableModule } from 'primeng/table';
         component: StudentListComponent
       }
     ]),
-    TableModule
+    TableModule,
+    RippleModule,
+    ButtonModule
   ]
 })
 
