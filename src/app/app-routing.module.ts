@@ -35,6 +35,11 @@ const routes: Routes = [
       import('./views/student-list/student-list.module').then(m => m.StudentListModule)
   },
   {
+    path: 'addStudent',
+    loadChildren: () =>
+      import('./views/add-student/add-student.module').then(m => m.AddStudentModule)
+  },
+  {
     path: 'students/:id',
     loadChildren: () =>
       import('./views/student-details/student-details.module').then(m => m.StudentDetailsModule)

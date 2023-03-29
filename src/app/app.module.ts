@@ -8,6 +8,7 @@ import { AppRoutingModule } from "./app-routing.module";
 import { PrimeNGConfig } from "primeng/api";
 import {NavbarPanelModule} from "./views/navbar-panel/navbar-panel.module";
 
+
 const primeNGConfigFactory = (primeConfig: PrimeNGConfig) => () => {
   primeConfig.ripple = true;
 };
@@ -15,6 +16,7 @@ const primeNGConfigFactory = (primeConfig: PrimeNGConfig) => () => {
 @NgModule({
   declarations: [
     AppComponent,
+
   ],
     imports: [
         BrowserModule,

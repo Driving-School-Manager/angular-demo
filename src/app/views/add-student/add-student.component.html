@@ -1,0 +1,23 @@
+
+  <h2>Dodaj kursanta</h2>
+  <div>
+    <ul>
+      <li>
+        <label for="student-firstName">imię: </label>
+        <input id="student-firstName"  placeholder="imię">
+      </li>
+      <li>
+        <label for="student-lastName">nazwisko: </label>
+        <input id="student-lastName"  placeholder="nazwisko">
+      </li>
+      <li>
+        <label for="student-email">e-mail: </label>
+        <input id="student-email"  placeholder="e-mail">
+      </li>
+      <li>
+        <label for="active">aktywny: </label>
+        <p-checkbox inputId="active" [binary]="true" [(ngModel)]="checked"></p-checkbox>
+      </li>
+    </ul>
+
+  </div>
