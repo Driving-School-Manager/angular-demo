@@ -1,4 +1,4 @@
-<p-card>
+<p-card class="table-card">
     <ng-template pTemplate="header">
         <div class="card-header-group flex justify-content-between">
             <h2>Pojazdy</h2>
@@ -29,18 +29,20 @@
                 <td>{{ vehicle.status }}</td>
                 <td>
                     <div class="operation-buttons-group">
-                        <p-button icon="pi pi-file-edit"></p-button>
-                        <p-button icon="pi pi-print" styleClass="p-button-help"></p-button>
-                        <p-button icon="pi pi-times" styleClass="p-button-danger"></p-button>
+                        <p-button icon="pi pi-file-edit" (onClick)="editVehicle()"></p-button>
+                        <p-button icon="pi pi-print" (onClick)="printVehicle()"
+                        styleClass="p-button-help"></p-button>
+                        <p-button icon="pi pi-times" (onClick)="deleteVehicle(vehicle.id)" 
+                        styleClass="p-button-danger"></p-button>
                     </div>
                 </td>
             </tr>
         </ng-template>
-        <ng-template pTemplate="summary">
+        <!-- <ng-template pTemplate="summary">
             <div class="card flex justify-content-center">
                 <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
                     [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
             </div>
-        </ng-template>
+        </ng-template> -->
     </p-table>
 </p-card>

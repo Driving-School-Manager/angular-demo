@@ -7,11 +7,16 @@ import { Vehicle } from '../model/Vehicle';
   providedIn: 'root'
 })
 export class VehicleService {
-  private readonly apiUrl: string = 'http://localhost:8080/vehicles';
+  private readonly apiUrlVehicles: string = 'http://localhost:8080/vehicles';
 
   constructor(private http: HttpClient) { }
 
-  getVehicles(): Observable<Vehicle[]>{
-    return this.http.get<Vehicle[]>(`${this.apiUrl}`)
+  getVehicles(): Observable<Vehicle[]> {
+    return this.http.get<Vehicle[]>(`${this.apiUrlVehicles}`)
+  }
+
+  deleteVehicle(id: number): Observable<number> {
+    console.log(id);
+    return this.http.delete<number>(`${this.apiUrlVehicles}/`+id)
   }
 }

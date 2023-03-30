@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { PrimeNGConfig } from "primeng/api";
-import {NavbarPanelModule} from "./views/navbar-panel/navbar-panel.module";
+import { NavbarPanelModule } from "./views/navbar-panel/navbar-panel.module";
 
 const primeNGConfigFactory = (primeConfig: PrimeNGConfig) => () => {
   primeConfig.ripple = true;
@@ -16,14 +16,14 @@ const primeNGConfigFactory = (primeConfig: PrimeNGConfig) => () => {
   declarations: [
     AppComponent,
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        AppRoutingModule,
-        HttpClientModule,
-        NavbarPanelModule,
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    NavbarPanelModule,
+  ],
   providers: [
     {
       provide: APP_INITIALIZER,
