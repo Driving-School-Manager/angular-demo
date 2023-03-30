@@ -15,7 +15,7 @@ export class AddStudentComponent {
     lastName: '',
     email: '',
     active: true
-  })
+  });
 
   constructor(
     private studentService: StudentService,

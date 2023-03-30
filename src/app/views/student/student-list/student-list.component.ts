@@ -7,12 +7,18 @@ import {StudentService} from "../../../services/student.service";
   templateUrl: './student-list.component.html',
   styleUrls: ['./student-list.component.css']
 })
-export class StudentListComponent implements OnInit{
+export class StudentListComponent implements OnInit {
   students: Student[] = [];
+  idToDelete: number = 0;
   addStudentUrl: string = '/addStudent'
-  constructor(private studentService: StudentService) {
+
+  constructor(
+    private studentService: StudentService,
+   ) {
+
 
   }
+
   ngOnInit(): void {
     this.studentService.findAll().subscribe(data => {
       this.students = data;
@@ -20,11 +26,12 @@ export class StudentListComponent implements OnInit{
 
   }
 
-  deleteStudent(id: number){
+  deleteStudent(id: number) {
     this.students = this.students.filter(s => s.id !== id);
     this.studentService.deleteById(id).subscribe();
   }
-  getEventValue($event:any) :string {
+
+  getEventValue($event: any): string {
     return $event.target.value;
   }
 

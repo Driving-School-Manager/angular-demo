@@ -10,13 +10,20 @@
 
   <ng-template pTemplate="caption">
     <div class="flex align-items-center justify-content-between">
-      <p>Kursanci</p>
-      <span class="p-input-icon-left ml-auto">
+      <div>
+        <p>Kursanci</p>
+      </div>
+      <div>
+        <span class="p-input-icon-left ml-auto">
         <i class="pi pi-search"></i>
           <input pInputText type="text" (input)="studentsTab.filterGlobal(getEventValue($event), 'contains')"
-        placeholder="szukaj"/>
+                 placeholder="szukaj"/>
       </span>
-      <p-button label="Dodaj kursanta" icon="pi pi-plus" [routerLink]="addStudentUrl"></p-button>
+      </div>
+      <div>
+        <p-button styleClass="p-button-success" label="Dodaj kursanta" icon="pi pi-plus" [routerLink]="addStudentUrl"></p-button>
+      </div>
+
     </div>
   </ng-template>
 
