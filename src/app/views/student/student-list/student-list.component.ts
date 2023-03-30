@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
-import {Student} from "../../model/student";
-import {StudentService} from "../../services/student.service";
+import {Student} from "../../../model/student";
+import {StudentService} from "../../../services/student.service";
 
 @Component({
   selector: 'app-student-list',
@@ -9,6 +9,7 @@ import {StudentService} from "../../services/student.service";
 })
 export class StudentListComponent implements OnInit{
   students: Student[] = [];
+  addStudentUrl: string = '/addStudent'
   constructor(private studentService: StudentService) {
 
   }
@@ -22,6 +23,9 @@ export class StudentListComponent implements OnInit{
   deleteStudent(id: number){
     this.students = this.students.filter(s => s.id !== id);
     this.studentService.deleteById(id).subscribe();
+  }
+  getEventValue($event:any) :string {
+    return $event.target.value;
   }
 
 }

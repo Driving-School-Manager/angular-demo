@@ -1,11 +1,11 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { StudentListComponent } from './student-list.component';
+import {NgModule} from '@angular/core';
+import {CommonModule} from '@angular/common';
+import {StudentListComponent} from './student-list.component';
 import {RouterModule} from "@angular/router";
-import { TableModule } from 'primeng/table';
+import {TableModule} from 'primeng/table';
 import {RippleModule} from "primeng/ripple";
 import {ButtonModule} from "primeng/button";
-
+import {InputTextModule} from "primeng/inputtext";
 
 
 @NgModule({
@@ -22,10 +22,11 @@ import {ButtonModule} from "primeng/button";
     ]),
     TableModule,
     RippleModule,
-    ButtonModule
+    ButtonModule,
+    InputTextModule
   ]
 })
 
 
-
-export class StudentListModule { }
+export class StudentListModule {
+}
