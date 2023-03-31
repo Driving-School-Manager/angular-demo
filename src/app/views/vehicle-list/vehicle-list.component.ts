@@ -8,7 +8,9 @@ import { VehicleService } from 'src/app/services/vehicle.service';
   styleUrls: ['./vehicle-list.component.css']
 })
 export class VehicleListComponent implements OnInit {
-  vehicles: Vehicle[] = [];
+  vehicles: Vehicle[] = [
+    {brand: 'Audi', status: 'active', transmissionType: 'manual', id: 1, yearOfFabrication: '2000'}
+  ];
   first: number = 0;
   rows: number = 10;
 

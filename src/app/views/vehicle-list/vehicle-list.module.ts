@@ -19,7 +19,6 @@ import { CardModule } from 'primeng/card';
     ButtonModule,
     PaginatorModule,
     CardModule,
-
     RouterModule.forChild([
       {
         path: '',

@@ -1,48 +1,52 @@
-<p-card class="table-card">
-    <ng-template pTemplate="header">
-        <div class="card-header-group flex justify-content-between">
-            <h2>Pojazdy</h2>
-            <div class="card-header-button-group">
-                <p-button class="add-button" (onClick)="reload()" 
-                icon="pi pi-plus" styleClass="p-button-success"></p-button>
-                <p-button class="refresh-button" (onClick)="reload()" 
-                icon="pi pi-refresh"></p-button>
-            </div>
-        </div>
-    </ng-template>
-
-    <p-table [value]="vehicles" [tableStyle]="{ 'min-width': '50rem' }">
+<div class="surface-card p-4 shadow-2 border-round p-4 md:p-6 lg:p-8">
+    <div class="text-3xl font-medium text-900 mb-3">Pojazdy</div>
+    <p-card class="table-card">
         <ng-template pTemplate="header">
-                <tr class="table-header">
-                    <th>Marka</th>
-                    <th>Typ</th>
-                    <th>Rok produkcji</th>
-                    <th>Status</th>
-                    <th></th>
-                </tr>
-        </ng-template>
-        <ng-template pTemplate="body" let-vehicle>
-            <tr class="table-body">
-                <td>{{ vehicle.brand }}</td>
-                <td>{{ vehicle.transmissionType }}</td>
-                <td>{{ vehicle.yearOfFabrication }}</td>
-                <td>{{ vehicle.status }}</td>
-                <td>
-                    <div class="operation-buttons-group">
-                        <p-button icon="pi pi-file-edit" (onClick)="editVehicle()"></p-button>
-                        <p-button icon="pi pi-print" (onClick)="printVehicle()"
-                        styleClass="p-button-help"></p-button>
-                        <p-button icon="pi pi-times" (onClick)="deleteVehicle(vehicle.id)" 
-                        styleClass="p-button-danger"></p-button>
-                    </div>
-                </td>
-            </tr>
-        </ng-template>
-        <!-- <ng-template pTemplate="summary">
-            <div class="card flex justify-content-center">
-                <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
-                    [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+            <div class="card-header-group">
+                <!-- <h2>Pojazdy</h2> -->
+                <div class="card-header-button-group flex justify-content-end">
+                    <p-button class="add-button" (onClick)="reload()" 
+                    icon="pi pi-plus" styleClass="p-button-success"></p-button>
+                    <p-button class="refresh-button" (onClick)="reload()" 
+                    icon="pi pi-refresh"></p-button>
+                </div>
             </div>
-        </ng-template> -->
-    </p-table>
-</p-card>
+        </ng-template>
+    
+        <p-table [value]="vehicles" [tableStyle]="{ 'min-width': '50rem' }">
+            <ng-template pTemplate="header">
+                    <tr class="table-header">
+                        <th>Marka</th>
+                        <th>Typ</th>
+                        <th>Rok produkcji</th>
+                        <th>Status</th>
+                        <th></th>
+                    </tr>
+            </ng-template>
+            <ng-template pTemplate="body" let-vehicle>
+                <tr class="table-body">
+                    <td>{{ vehicle.brand }}</td>
+                    <td>{{ vehicle.transmissionType }}</td>
+                    <td>{{ vehicle.yearOfFabrication }}</td>
+                    <td>{{ vehicle.status }}</td>
+                    <td>
+                        <div class="operation-buttons-group">
+                            <p-button icon="pi pi-file-edit" (onClick)="editVehicle()"></p-button>
+                            <p-button icon="pi pi-print" (onClick)="printVehicle()"
+                            styleClass="p-button-help"></p-button>
+                            <p-button icon="pi pi-times" (onClick)="deleteVehicle(vehicle.id)" 
+                            styleClass="p-button-danger"></p-button>
+                        </div>
+                    </td>
+                </tr>
+            </ng-template>
+            <!-- <ng-template pTemplate="summary">
+                <div class="card flex justify-content-center">
+                    <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
+                        [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
+                </div>
+            </ng-template> -->
+        </p-table>
+    </p-card>
+</div>
+
