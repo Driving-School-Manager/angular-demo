@@ -57,7 +57,7 @@
       <td>{{ student.email }}</td>
       <td>
         <span class="p-buttonset">
-            <button pButton pRipple label="szczegóły" icon="pi pi-search" (click)="displayUpdate=true; idToUpdate=student.id;"></button>
+            <button pButton pRipple label="szczegóły" icon="pi pi-search" (click)="displayUpdate=true; idToUpdate=student.id; scrollUp()"></button>
             <button pButton pRipple label="usuń" icon="pi pi-trash" (click)="deleteStudent(student.id)"></button>
         </span>
       </td>
@@ -65,5 +65,6 @@
     </tr>
   </ng-template>
 </p-table>
+
 
 

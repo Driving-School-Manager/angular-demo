@@ -42,9 +42,16 @@ export class StudentListComponent implements OnInit {
   }
 
   addStudentToList(student: Student){
-    console.log("adding student with id: " + student.id);
     this.students.push(student);
     this.displayUpdate=false;
+  }
+
+  scrollUp(){
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    });
   }
 
 

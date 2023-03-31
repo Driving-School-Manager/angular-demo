@@ -4,6 +4,11 @@ import {AddStudentComponent} from "./add-student.component";
 import {RouterModule} from "@angular/router";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {CheckboxModule} from "primeng/checkbox";
+import {InputTextModule} from "primeng/inputtext";
+import {SelectButtonModule} from "primeng/selectbutton";
+import {ButtonModule} from "primeng/button";
+import {RippleModule} from "primeng/ripple";
+import {DialogModule} from "primeng/dialog";
 
 
 
@@ -23,6 +28,11 @@ import {CheckboxModule} from "primeng/checkbox";
         FormsModule,
         CheckboxModule,
         ReactiveFormsModule,
+        InputTextModule,
+        SelectButtonModule,
+        ButtonModule,
+        RippleModule,
+        DialogModule,
     ]
 })
 export class AddStudentModule { }

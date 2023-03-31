@@ -9,7 +9,9 @@ import {Student} from "../../../model/student";
   styleUrls: ['./add-student.component.css']
 })
 export class AddStudentComponent {
-  checked: boolean = true;
+  checked: boolean;
+  displayModal: boolean;
+  stateOptions: any[];
   addForm = this.formBuilder.group({
     firstName: '',
     lastName: '',
@@ -20,10 +22,26 @@ export class AddStudentComponent {
   constructor(
     private studentService: StudentService,
     private formBuilder: FormBuilder,
-  ) {}
+  ) {
+    this.checked=true;
+    this.displayModal=false;
+    this.stateOptions = [
+      {label: 'tak', value: true},
+      {label: 'nie', value: false}
+    ];
+  }
   onSubmit():void{
     console.log(this.addForm.value);
     this.studentService.addStudent(this.addForm.value as Student).subscribe();
+    this.resetForm();
+    this.showModalDialog();
+  }
+
+  resetForm(){
+    this.addForm.reset();
+  }
+  showModalDialog(){
+    this.displayModal=true;
   }
 
 }
