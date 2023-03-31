@@ -1,3 +1,11 @@
+<app-student-details
+  *ngIf="displayUpdate"
+  [idToUpdate]="idToUpdate"
+  (newStudentEvent)="addStudentToList($event)"
+  (deleteOldStudentEvent)="deleteStudentFromList($event)"
+  (stopDisplayEvent)="setDisplayUpdate($event)"
+></app-student-details>
+
 <p-table
   #studentsTab
   [value]="students"
@@ -49,7 +57,7 @@
       <td>{{ student.email }}</td>
       <td>
         <span class="p-buttonset">
-            <button pButton pRipple label="szczegóły" icon="pi pi-search" [routerLink]="student.id"></button>
+            <button pButton pRipple label="szczegóły" icon="pi pi-search" (click)="displayUpdate=true; idToUpdate=student.id;"></button>
             <button pButton pRipple label="usuń" icon="pi pi-trash" (click)="deleteStudent(student.id)"></button>
         </span>
       </td>

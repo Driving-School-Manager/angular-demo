@@ -7,36 +7,42 @@ import {HttpClient} from "@angular/common/http";
   providedIn: 'root'
 })
 export class StudentService {
-  private studentUrl:string;
+  private studentUrl: string;
 
   constructor(private http: HttpClient) {
     this.studentUrl = 'http://localhost:8080/students'
   }
 
   public findAll(): Observable<Student[]> {
-    console.log("pobieram wszystkich");
     return this.http.get<Student[]>(this.studentUrl)
       .pipe(
         catchError(this.handleError<Student[]>([]))
       );
   }
 
-  public findById(id: number): Observable<Student>{
-    return this.http.get<Student>(this.studentUrl+'/'+id)
+  public findById(id: number): Observable<Student> {
+    return this.http.get<Student>(this.studentUrl + '/' + id)
       .pipe(
         catchError(this.handleError<Student>())
       );
   }
-  public deleteById(id: number){
-    return this.http.delete(this.studentUrl+'/'+id);
+
+  public deleteById(id: number) {
+    return this.http.delete(this.studentUrl + '/' + id);
   }
 
-  public addStudent(student: Student){
-    return this.http.post(this.studentUrl,student);
+  public addStudent(student: Student): Observable<Student> {
+    return this.http.post<Student>(this.studentUrl, student)
+      .pipe(
+        catchError(this.handleError<Student>())
+      );
   }
 
-  public updateStudent(student: Student){
-    return this.http.put((this.studentUrl + '/' + student.id),student);
+  public updateStudent(student: Student): Observable<Student> {
+    return this.http.put<Student>((this.studentUrl + '/' + student.id), student)
+      .pipe(
+        catchError(this.handleError<Student>())
+      );
   }
 
 
@@ -46,7 +52,5 @@ export class StudentService {
       return of(result as T);
     };
   }
-
-
 
 }

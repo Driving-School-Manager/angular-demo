@@ -6,11 +6,15 @@ import {TableModule} from 'primeng/table';
 import {RippleModule} from "primeng/ripple";
 import {ButtonModule} from "primeng/button";
 import {InputTextModule} from "primeng/inputtext";
+import {StudentDetailsComponent} from "../student-details/student-details.component";
+import {ReactiveFormsModule} from "@angular/forms";
+import {SelectButtonModule} from "primeng/selectbutton";
 
 
 @NgModule({
   declarations: [
-    StudentListComponent
+    StudentListComponent,
+    StudentDetailsComponent
   ],
   imports: [
     CommonModule,
@@ -23,7 +27,10 @@ import {InputTextModule} from "primeng/inputtext";
     TableModule,
     RippleModule,
     ButtonModule,
-    InputTextModule
+    InputTextModule,
+    ReactiveFormsModule,
+    SelectButtonModule,
+
   ]
 })
 

@@ -9,15 +9,13 @@ import {StudentService} from "../../../services/student.service";
 })
 export class StudentListComponent implements OnInit {
   students: Student[] = [];
-  idToDelete: number = 0;
+  idToUpdate: number = 0;
+  displayUpdate: boolean = false;
   addStudentUrl: string = '/addStudent'
 
   constructor(
     private studentService: StudentService,
-   ) {
-
-
-  }
+  ) {}
 
   ngOnInit(): void {
     this.studentService.findAll().subscribe(data => {
@@ -27,12 +25,27 @@ export class StudentListComponent implements OnInit {
   }
 
   deleteStudent(id: number) {
-    this.students = this.students.filter(s => s.id !== id);
+    this.deleteStudentFromList(id);
     this.studentService.deleteById(id).subscribe();
+  }
+
+  deleteStudentFromList(id: number) {
+    this.students = this.students.filter(s => s.id !== id);
   }
 
   getEventValue($event: any): string {
     return $event.target.value;
   }
+
+  setDisplayUpdate(display:boolean){
+    this.displayUpdate = display;
+  }
+
+  addStudentToList(student: Student){
+    console.log("adding student with id: " + student.id);
+    this.students.push(student);
+    this.displayUpdate=false;
+  }
+
 
 }

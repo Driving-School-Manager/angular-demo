@@ -51,8 +51,8 @@
     </li>
 
     <li class="flex align-items-center py-3 px-2 border-top-1 surface-border flex-wrap justify-content-center">
-        <button type="button" class="w-5 m-1" pButton pRipple label="wróć" icon="pi pi-angle-left" [routerLink]="'/students'"></button>
-        <button type="submit" class="w-5 m-1" pButton pRipple label="zapisz zmiany" icon="pi pi-check" ></button>
+        <button type="button" class="w-5 m-1" pButton pRipple label="zamknij bez zapisu" icon="pi pi-times" (click)="stopDisplaying()"></button>
+        <button type="submit" class="w-5 m-1" pButton pRipple label="zapisz zmiany" icon="pi pi-check"></button>
     </li>
     </form>
   </ul>

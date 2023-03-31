@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Student} from "../../../model/student";
 import {ActivatedRoute} from "@angular/router";
 import {StudentService} from "../../../services/student.service";
@@ -11,6 +11,10 @@ import {FormBuilder, FormGroup} from "@angular/forms";
 })
 export class StudentDetailsComponent implements OnInit {
   @Input() student?: Student;
+  @Input() idToUpdate!: number;
+  @Output() stopDisplayEvent = new EventEmitter<boolean>();
+  @Output() newStudentEvent = new EventEmitter<Student>();
+  @Output() deleteOldStudentEvent = new EventEmitter<number>();
   stateOptions: any[];
   editName: boolean;
   editLastName: boolean;
@@ -42,14 +46,26 @@ export class StudentDetailsComponent implements OnInit {
     this.getStudent();
   }
   onSubmit():void{
-    this.studentService.updateStudent(this.updateForm.value as Student).subscribe();
-   // this.router.navigateByUrl('/students');
+    this.deleteOldStudentEvent.emit(this.updateForm.value.id);
+    this.studentService.updateStudent(this.updateForm.value as Student).subscribe((s)=>this.passUpdatedStudent(s));
+  }
+
+  ngOnChanges(){
+    this.getStudent();
   }
 
   private getStudent(): void {
-    const id = Number(this.activatedRoute.snapshot.paramMap.get('id'));
-    this.studentService.findById(id).subscribe(student => this.student = student);
+    this.studentService.findById(this.idToUpdate).subscribe(student => this.student = student);
   }
+
+  stopDisplaying(){
+    this.stopDisplayEvent.emit(false);
+  }
+  passUpdatedStudent(student: Student){
+    console.log("in pass updated student" + student.id)
+    this.newStudentEvent.emit(student);
+  }
+
 
 
 
