@@ -7,6 +7,7 @@ import { FormsModule } from "@angular/forms";
 import { AppRoutingModule } from "./app-routing.module";
 import { PrimeNGConfig } from "primeng/api";
 import {NavbarPanelModule} from "./views/navbar-panel/navbar-panel.module";
+import { LayoutComponent } from './layout/layout.component';
 
 
 const primeNGConfigFactory = (primeConfig: PrimeNGConfig) => () => {
@@ -16,6 +17,7 @@ const primeNGConfigFactory = (primeConfig: PrimeNGConfig) => () => {
 @NgModule({
   declarations: [
     AppComponent,
+    LayoutComponent,
 
   ],
     imports: [
