@@ -1,0 +1,70 @@
+<app-student-details
+  *ngIf="displayUpdate"
+  [idToUpdate]="idToUpdate"
+  (newStudentEvent)="addStudentToList($event)"
+  (deleteOldStudentEvent)="deleteStudentFromList($event)"
+  (stopDisplayEvent)="setDisplayUpdate($event)"
+></app-student-details>
+
+<p-table
+  #studentsTab
+  [value]="students"
+  [tableStyle]="{ 'min-width': '50rem' }"
+  [paginator]="true"
+  [rows]="10"
+  [rowsPerPageOptions]="[10, 25, 50]"
+  [globalFilterFields]="['firstName','lastName','email']"
+>
+
+  <ng-template pTemplate="caption">
+    <div class="flex align-items-center justify-content-between">
+      <div>
+        <p>Kursanci</p>
+      </div>
+      <div>
+        <span class="p-input-icon-left ml-auto">
+        <i class="pi pi-search"></i>
+          <input pInputText type="text" (input)="studentsTab.filterGlobal(getEventValue($event), 'contains')"
+                 placeholder="szukaj"/>
+      </span>
+      </div>
+      <div>
+        <p-button styleClass="p-button-success" label="Dodaj kursanta" icon="pi pi-plus" [routerLink]="addStudentUrl"></p-button>
+      </div>
+
+    </div>
+  </ng-template>
+
+  <ng-template pTemplate="header">
+    <tr>
+      <th pSortableColumn="firstName">imię
+        <p-sortIcon field="firstName"></p-sortIcon>
+      </th>
+      <th pSortableColumn="lastName">nazwisko
+        <p-sortIcon field="lasttName"></p-sortIcon>
+      </th>
+      <th pSortableColumn="email">e-mail
+        <p-sortIcon field="email"></p-sortIcon>
+      </th>
+      <th>akcje</th>
+
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-student>
+    <tr>
+      <td>{{ student.firstName }}</td>
+      <td>{{ student.lastName }}</td>
+      <td>{{ student.email }}</td>
+      <td>
+        <span class="p-buttonset">
+            <button pButton pRipple label="szczegóły" icon="pi pi-search" (click)="displayUpdate=true; idToUpdate=student.id; scrollUp()"></button>
+            <button pButton pRipple label="usuń" icon="pi pi-trash" (click)="deleteStudent(student.id)"></button>
+        </span>
+      </td>
+
+    </tr>
+  </ng-template>
+</p-table>
+
+
+

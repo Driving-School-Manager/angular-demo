@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavbarPanelComponent } from './navbar-panel.component';
+import { AdminSidebarComponent } from './admin-sidebar.component';
 
 describe('NavbarPanelComponent', () => {
-  let component: NavbarPanelComponent;
-  let fixture: ComponentFixture<NavbarPanelComponent>;
+  let component: AdminSidebarComponent;
+  let fixture: ComponentFixture<AdminSidebarComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ NavbarPanelComponent ]
+      declarations: [ AdminSidebarComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(NavbarPanelComponent);
+    fixture = TestBed.createComponent(AdminSidebarComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
