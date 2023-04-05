@@ -27,22 +27,10 @@ export class VehicleListComponent implements OnInit {
     this.rows = event.rows;
   }
 
-  reload(): void {
-    this.vehicleService.getVehicles().subscribe(data => {
-      this.vehicles = data;
-    })
-  }
-
   editVehicle(): void { }
 
-  printVehicle(): void {
-    console.log('printVehicle')
-  }
-
   deleteVehicle(id: number): void {
-    this.vehicleService.deleteVehicle(id).subscribe(() => {
-      this.reload();
-    })
+    this.vehicleService.deleteVehicle(id).subscribe();
   }
 
 }

@@ -3,10 +3,8 @@
         <div class="card-header-group flex justify-content-between">
             <h2>Pojazdy</h2>
             <div class="card-header-button-group">
-                <p-button class="add-button" (onClick)="reload()" 
-                icon="pi pi-plus" styleClass="p-button-success"></p-button>
-                <p-button class="refresh-button" (onClick)="reload()" 
-                icon="pi pi-refresh"></p-button>
+                <p-button class="add-button" icon="pi pi-plus" styleClass="p-button-success"></p-button>
+                <p-button class="refresh-button" icon="pi pi-refresh"></p-button>
             </div>
         </div>
     </ng-template>
@@ -30,19 +28,12 @@
                 <td>
                     <div class="operation-buttons-group">
                         <p-button icon="pi pi-file-edit" (onClick)="editVehicle()"></p-button>
-                        <p-button icon="pi pi-print" (onClick)="printVehicle()"
-                        styleClass="p-button-help"></p-button>
+                        <p-button icon="pi pi-print" styleClass="p-button-help"></p-button>
                         <p-button icon="pi pi-times" (onClick)="deleteVehicle(vehicle.id)" 
                         styleClass="p-button-danger"></p-button>
                     </div>
                 </td>
             </tr>
         </ng-template>
-        <!-- <ng-template pTemplate="summary">
-            <div class="card flex justify-content-center">
-                <p-paginator (onPageChange)="onPageChange($event)" [first]="first" [rows]="rows" [totalRecords]="120"
-                    [rowsPerPageOptions]="[10, 20, 30]"></p-paginator>
-            </div>
-        </ng-template> -->
     </p-table>
 </p-card>
