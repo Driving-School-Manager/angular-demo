@@ -26,7 +26,6 @@ const primeNGConfigFactory = (primeConfig: PrimeNGConfig) => () => {
         FormsModule,
         AppRoutingModule,
         HttpClientModule,
-        AdminSidebarModule,
     ],
   providers: [
     {
