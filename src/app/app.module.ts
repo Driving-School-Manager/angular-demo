@@ -1,13 +1,12 @@
-import { NgModule, APP_INITIALIZER } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { HttpClientModule } from '@angular/common/http';
-import { AppComponent } from './app.component';
-import { FormsModule } from "@angular/forms";
-import { AppRoutingModule } from "./app-routing.module";
-import { PrimeNGConfig } from "primeng/api";
-import {AdminSidebarModule} from "./adminLayout/admin-sidebar/admin-sidebar.module";
-import { AdminLayoutComponent } from './adminLayout/admin-layout.component';
+import {APP_INITIALIZER, NgModule} from '@angular/core';
+import {BrowserModule} from '@angular/platform-browser';
+import {BrowserAnimationsModule} from "@angular/platform-browser/animations";
+import {HttpClientModule} from '@angular/common/http';
+import {AppComponent} from './app.component';
+import {FormsModule} from "@angular/forms";
+import {AppRoutingModule} from "./app-routing.module";
+import {PrimeNGConfig} from "primeng/api";
+import {AdminLayoutModule} from "./adminLayout/admin-layout.module";
 
 
 const primeNGConfigFactory = (primeConfig: PrimeNGConfig) => () => {
@@ -17,17 +16,15 @@ const primeNGConfigFactory = (primeConfig: PrimeNGConfig) => () => {
 @NgModule({
   declarations: [
     AppComponent,
-    AdminLayoutComponent,
-
   ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        FormsModule,
-        AppRoutingModule,
-        HttpClientModule,
-        AdminSidebarModule,
-    ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    FormsModule,
+    AppRoutingModule,
+    HttpClientModule,
+    AdminLayoutModule
+  ],
   providers: [
     {
       provide: APP_INITIALIZER,

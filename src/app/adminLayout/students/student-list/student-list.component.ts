@@ -11,7 +11,7 @@ export class StudentListComponent implements OnInit {
   students: Student[] = [];
   idToUpdate: number = 0;
   displayUpdate: boolean = false;
-  addStudentUrl: string = '/addStudent'
+  addStudentUrl: string = '/admin/addStudent'
 
   constructor(
     private studentService: StudentService,

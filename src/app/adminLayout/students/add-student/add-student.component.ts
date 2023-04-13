@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import {StudentService} from "../../../services/student.service";
 import {FormBuilder} from "@angular/forms";
 import {Student} from "../../../model/student";
+import {InputElement} from "../../../model/form-elements/InputElement";
 
 @Component({
   selector: 'app-add-student',
@@ -12,12 +13,16 @@ export class AddStudentComponent {
   checked: boolean;
   displayModal: boolean;
   stateOptions: any[];
+  inputTextElements: InputElement[] =[];
+  inputBooleanElements: InputElement[] =[];
   addForm = this.formBuilder.group({
     firstName: '',
     lastName: '',
     email: '',
     active: true
   });
+  homeUrl: string = '/admin';
+  studentListUrl: string = '/admin/students'
 
   constructor(
     private studentService: StudentService,
@@ -29,6 +34,14 @@ export class AddStudentComponent {
       {label: 'tak', value: true},
       {label: 'nie', value: false}
     ];
+    this.inputTextElements=[
+      {fieldTitle: "imię", formControlName: "firstName"},
+      {fieldTitle: "nazwisko", formControlName: "lastName"},
+      {fieldTitle: "e-mail", formControlName: "email"},
+    ]
+    this.inputBooleanElements=[
+      {fieldTitle: "zgody marketingowe", formControlName: "marketingEnabled"},
+    ]
   }
   onSubmit():void{
     console.log(this.addForm.value);
