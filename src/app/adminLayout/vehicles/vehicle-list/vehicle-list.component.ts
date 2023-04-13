@@ -7,17 +7,30 @@ import { VehicleService } from 'src/app/services/vehicle.service';
   templateUrl: './vehicle-list.component.html',
   styleUrls: ['./vehicle-list.component.css']
 })
-export class VehicleListComponent implements OnInit{
+export class VehicleListComponent implements OnInit {
   vehicles: Vehicle[] = [];
-  
+  first: number = 0;
+  rows: number = 10;
 
-  constructor(private vehicleService: VehicleService){  }
+  constructor(private vehicleService: VehicleService) { }
 
   ngOnInit(): void {
-    this.vehicleService.getVehicles().subscribe(data =>{
-      console.log(data)
+    this.vehicleService.getVehicles().subscribe(data => {
+      console.log(data);
       this.vehicles = data;
-      console.log(this.vehicles)
+      console.log(this.vehicles);
     });
   }
+
+  onPageChange(event: { first: number; rows: number; }) {
+    this.first = event.first;
+    this.rows = event.rows;
+  }
+
+  editVehicle(): void { }
+
+  deleteVehicle(id: number): void {
+    this.vehicleService.deleteVehicle(id).subscribe();
+  }
+
 }

@@ -1,18 +1,39 @@
-<p-table [value]="vehicles" [tableStyle]="{ 'min-width': '50rem' }">
+<p-card class="table-card">
     <ng-template pTemplate="header">
-        <tr>
-            <th>Brand</th>
-            <th>Type</th>
-            <th>Year of Fabrication</th>
-            <th>Status</th>
-        </tr>
+        <div class="card-header-group flex justify-content-between">
+            <h2>Pojazdy</h2>
+            <div class="card-header-button-group">
+                <p-button class="add-button" icon="pi pi-plus" styleClass="p-button-success"></p-button>
+                <p-button class="refresh-button" icon="pi pi-refresh"></p-button>
+            </div>
+        </div>
     </ng-template>
-    <ng-template pTemplate="body" let-vehicle>
-        <tr>
-            <td>{{ vehicle.brand }}</td>
-            <td>{{ vehicle.transmissionType }}</td>
-            <td>{{ vehicle.yearOfFabrication }}</td>
-            <td>{{ vehicle.status }}</td>
-        </tr>
-    </ng-template>
-</p-table>
+
+    <p-table [value]="vehicles" [tableStyle]="{ 'min-width': '50rem' }">
+        <ng-template pTemplate="header">
+                <tr class="table-header">
+                    <th>Marka</th>
+                    <th>Typ</th>
+                    <th>Rok produkcji</th>
+                    <th>Status</th>
+                    <th></th>
+                </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-vehicle>
+            <tr class="table-body">
+                <td>{{ vehicle.brand }}</td>
+                <td>{{ vehicle.transmissionType }}</td>
+                <td>{{ vehicle.yearOfFabrication }}</td>
+                <td>{{ vehicle.status }}</td>
+                <td>
+                    <div class="operation-buttons-group">
+                        <p-button icon="pi pi-file-edit" (onClick)="editVehicle()"></p-button>
+                        <p-button icon="pi pi-print" styleClass="p-button-help"></p-button>
+                        <p-button icon="pi pi-times" (onClick)="deleteVehicle(vehicle.id)" 
+                        styleClass="p-button-danger"></p-button>
+                    </div>
+                </td>
+            </tr>
+        </ng-template>
+    </p-table>
+</p-card>
