@@ -1,20 +1,20 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {StudentService} from "../../../services/student.service";
 import {FormBuilder} from "@angular/forms";
 import {Student} from "../../../model/student";
-import {InputElement} from "../../../model/form-elements/InputElement";
+import {InputTextElement} from "../../../model/form-elements/InputTextElement";
 
 @Component({
   selector: 'app-add-student',
   templateUrl: './add-student.component.html',
   styleUrls: ['./add-student.component.css']
 })
-export class AddStudentComponent {
+export class AddStudentComponent implements OnInit {
   checked: boolean;
   displayModal: boolean;
-  stateOptions: any[];
-  inputTextElements: InputElement[] =[];
-  inputBooleanElements: InputElement[] =[];
+  stateOptions: any[] = [];
+  inputTextElements: InputTextElement[] = [];
+  inputBooleanElements: InputTextElement[] = [];
   addForm = this.formBuilder.group({
     firstName: '',
     lastName: '',
@@ -28,33 +28,39 @@ export class AddStudentComponent {
     private studentService: StudentService,
     private formBuilder: FormBuilder,
   ) {
-    this.checked=true;
-    this.displayModal=false;
+    this.checked = true;
+    this.displayModal = false;
+
+  }
+
+  ngOnInit() {
     this.stateOptions = [
       {label: 'tak', value: true},
       {label: 'nie', value: false}
     ];
-    this.inputTextElements=[
+    this.inputTextElements = [
       {fieldTitle: "imię", formControlName: "firstName"},
       {fieldTitle: "nazwisko", formControlName: "lastName"},
       {fieldTitle: "e-mail", formControlName: "email"},
-    ]
-    this.inputBooleanElements=[
+    ];
+    this.inputBooleanElements = [
       {fieldTitle: "zgody marketingowe", formControlName: "marketingEnabled"},
-    ]
+    ];
   }
-  onSubmit():void{
+
+  onSubmit(): void {
     console.log(this.addForm.value);
     this.studentService.addStudent(this.addForm.value as Student).subscribe();
     this.resetForm();
     this.showModalDialog();
   }
 
-  resetForm(){
+  resetForm() {
     this.addForm.reset();
   }
-  showModalDialog(){
-    this.displayModal=true;
+
+  showModalDialog() {
+    this.displayModal = true;
   }
 
 }

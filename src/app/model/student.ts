@@ -3,5 +3,5 @@ export interface Student {
   firstName: string;
   lastName: string;
   email: string;
-  marketing_enabled: boolean;
+  marketingEnabled: boolean;
 }
