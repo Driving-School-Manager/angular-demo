@@ -6,7 +6,7 @@ import {AppComponent} from './app.component';
 import {FormsModule} from "@angular/forms";
 import {AppRoutingModule} from "./app-routing.module";
 import {PrimeNGConfig} from "primeng/api";
-import {AdminLayoutModule} from "./adminLayout/admin-layout.module";
+import {AdminLayoutModule} from "./views/admin/admin-layout/admin-layout.module";
 
 
 const primeNGConfigFactory = (primeConfig: PrimeNGConfig) => () => {

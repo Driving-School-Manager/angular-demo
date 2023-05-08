@@ -1,10 +1,9 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Student} from "../../../model/Student";
+import {Student} from "../../../../../model/Student";
 import {ActivatedRoute} from "@angular/router";
-import {StudentService} from "../../../services/student.service";
+import {StudentService} from "../../../../../service/student.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
-import {InputTextElement} from "../../../model/form-elements/InputTextElement";
-import {InputBooleanElement} from "../../../model/form-elements/InputBooleanElement";
+import {InputFormElement} from "../../../../../model/form-elements/input-form-element";
 
 @Component({
   selector: 'app-student-details',
@@ -22,8 +21,8 @@ export class StudentDetailsComponent implements OnInit {
   editLastName: boolean;
   editEmail: boolean;
   updateForm: FormGroup;
-  inputTextElements: InputTextElement[] = [];
-  inputBooleanElements: InputBooleanElement[] = [];
+  inputTextElements: InputFormElement[] = [];
+  inputBooleanElements: InputFormElement[] = [];
 
   constructor(
     private readonly activatedRoute: ActivatedRoute,

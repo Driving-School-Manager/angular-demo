@@ -1,6 +1,6 @@
-export interface InputBooleanElement {
+export interface InputFormElement {
   fieldTitle: string,
   formControlName: string;
   readOnly?: boolean;
-  initialValue?: boolean;
+  initialValue?: any;
 }

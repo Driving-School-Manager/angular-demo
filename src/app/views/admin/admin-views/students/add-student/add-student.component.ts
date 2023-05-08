@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {StudentService} from "../../../services/student.service";
+import {StudentService} from "../../../../../service/student.service";
 import {FormBuilder} from "@angular/forms";
-import {Student} from "../../../model/Student";
-import {InputTextElement} from "../../../model/form-elements/InputTextElement";
+import {Student} from "../../../../../model/Student";
+import {InputFormElement} from "../../../../../model/form-elements/input-form-element";
 
 @Component({
   selector: 'app-add-student',
@@ -13,8 +13,8 @@ export class AddStudentComponent implements OnInit {
   checked: boolean;
   displayModal: boolean;
   stateOptions: any[] = [];
-  inputTextElements: InputTextElement[] = [];
-  inputBooleanElements: InputTextElement[] = [];
+  inputTextElements: InputFormElement[] = [];
+  inputBooleanElements: InputFormElement[] = [];
   addForm = this.formBuilder.group({
     firstName: '',
     lastName: '',
