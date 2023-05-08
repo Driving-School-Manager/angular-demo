@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Student} from "../../../../../model/Student";
+import {Student} from "../../../../../model/student";
 import {ActivatedRoute} from "@angular/router";
 import {StudentService} from "../../../../../service/student.service";
 import {FormBuilder, FormGroup} from "@angular/forms";

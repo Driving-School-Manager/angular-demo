@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {StudentService} from "../../../../../service/student.service";
 import {FormBuilder} from "@angular/forms";
-import {Student} from "../../../../../model/Student";
+import {Student} from "../../../../../model/student";
 import {InputFormElement} from "../../../../../model/form-elements/input-form-element";
 
 @Component({

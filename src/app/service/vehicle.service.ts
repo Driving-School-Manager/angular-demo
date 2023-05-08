@@ -1,6 +1,6 @@
 import {HttpClient} from '@angular/common/http';
 import {Injectable} from '@angular/core';
-import {Vehicle} from '../model/Vehicle';
+import {Vehicle} from '../model/vehicle';
 import {CrudService} from "./crud-service";
 import {Constraints} from "./constraints";
 
