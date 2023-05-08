@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {StudentService} from "../../../services/student.service";
 import {FormBuilder} from "@angular/forms";
-import {Student} from "../../../model/student";
+import {Student} from "../../../model/Student";
 import {InputTextElement} from "../../../model/form-elements/InputTextElement";
 
 @Component({
@@ -50,7 +50,7 @@ export class AddStudentComponent implements OnInit {
 
   onSubmit(): void {
     console.log(this.addForm.value);
-    this.studentService.addStudent(this.addForm.value as Student).subscribe();
+    this.studentService.create(this.addForm.value as Student).subscribe();
     this.resetForm();
     this.showModalDialog();
   }

@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-import {Student} from "../../../model/student";
+import {Student} from "../../../model/Student";
 import {StudentService} from "../../../services/student.service";
 
 @Component({
@@ -18,10 +18,9 @@ export class StudentListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.studentService.findAll().subscribe(data => {
+    this.studentService.getAll().subscribe(data => {
       this.students = data;
     })
-
   }
 
   deleteStudent(id: number) {

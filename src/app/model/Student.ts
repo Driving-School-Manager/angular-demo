@@ -3,5 +3,8 @@ export interface Student {
   firstName: string;
   lastName: string;
   email: string;
+  blocked: boolean;
   marketingEnabled: boolean;
+  accountBalance: number;
+  lessonMinutesLeft: number;
 }

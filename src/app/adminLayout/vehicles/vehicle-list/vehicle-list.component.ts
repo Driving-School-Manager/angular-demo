@@ -15,7 +15,7 @@ export class VehicleListComponent implements OnInit {
   constructor(private vehicleService: VehicleService) { }
 
   ngOnInit(): void {
-    this.vehicleService.getVehicles().subscribe(data => {
+    this.vehicleService.getAll().subscribe(data => {
       console.log(data);
       this.vehicles = data;
       console.log(this.vehicles);
@@ -30,7 +30,7 @@ export class VehicleListComponent implements OnInit {
   editVehicle(): void { }
 
   deleteVehicle(id: number): void {
-    this.vehicleService.deleteVehicle(id).subscribe();
+    this.vehicleService.deleteById(id).subscribe();
   }
 
 }

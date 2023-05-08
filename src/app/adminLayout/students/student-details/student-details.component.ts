@@ -1,5 +1,5 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {Student} from "../../../model/student";
+import {Student} from "../../../model/Student";
 import {ActivatedRoute} from "@angular/router";
 import {StudentService} from "../../../services/student.service";
 import {FormBuilder, FormGroup} from "@angular/forms";
@@ -54,7 +54,7 @@ export class StudentDetailsComponent implements OnInit {
 
   onSubmit(): void {
     this.deleteOldStudentEvent.emit(this.updateForm.value.id);
-    this.studentService.updateStudent(this.updateForm.value as Student).subscribe((s) => this.passUpdatedStudent(s));
+    this.studentService.patchById(this.updateForm.value.id, this.updateForm.value as Student).subscribe((s) => this.passUpdatedStudent(s));
   }
 
   ngOnChanges() {
@@ -62,7 +62,7 @@ export class StudentDetailsComponent implements OnInit {
   }
 
   private getStudent(): void {
-    this.studentService.findById(this.idToUpdate).subscribe(student => {
+    this.studentService.getById(this.idToUpdate).subscribe(student => {
       this.student = student;
       this.inputTextElements = [
         {fieldTitle: "imię", formControlName: "firstName", readOnly: true, initialValue: student.firstName},
