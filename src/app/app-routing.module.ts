@@ -1,21 +1,21 @@
 import {NgModule} from '@angular/core';
 import {Routes, RouterModule} from "@angular/router";
-import {AdminLayoutComponent} from "./adminLayout/admin-layout.component";
+import {AdminLayoutComponent} from "./views/admin/admin-layout/admin-layout.component";
 
 
 const routes: Routes = [
 
   {path: 'admin', component: AdminLayoutComponent,
     children:[
-      {path: '', loadChildren: () => import('./adminLayout/admin-home/admin-home.module').then(m => m.AdminHomeModule)},
-      {path: 'vehicles', loadChildren: () => import('./adminLayout/vehicles/vehicle-list/vehicle-list.module').then(m => m.VehicleListModule)},
-      {path: 'students', loadChildren: () => import('./adminLayout/students/student-list/student-list.module').then(m => m.StudentListModule)},
-      {path: 'addStudent', loadChildren: () => import('./adminLayout/students/add-student/add-student.module').then(m => m.AddStudentModule)},
+      {path: '', loadChildren: () => import('./views/admin/admin-views/admin-home/admin-home.module').then(m => m.AdminHomeModule)},
+      {path: 'vehicles', loadChildren: () => import('./views/admin/admin-views/vehicles/vehicle-list/vehicle-list.module').then(m => m.VehicleListModule)},
+      {path: 'students', loadChildren: () => import('./views/admin/admin-views/students/student-list/student-list.module').then(m => m.StudentListModule)},
+      {path: 'addStudent', loadChildren: () => import('./views/admin/admin-views/students/add-student/add-student.module').then(m => m.AddStudentModule)},
       ]
     },
-  {path: '', loadChildren: () => import('./views/landing/landing.module').then(m => m.LandingModule)},
-  {path: 'login', loadChildren: () => import('./views/login/login.module').then(m => m.LoginModule)},
-  {path: 'notfound', loadChildren: () => import('./views/not-found/not-found.module').then(m => m.NotFoundModule)},
+  {path: '', loadChildren: () => import('./views/default/landing/landing.module').then(m => m.LandingModule)},
+  {path: 'login', loadChildren: () => import('./views/default/login/login.module').then(m => m.LoginModule)},
+  {path: 'notfound', loadChildren: () => import('./views/default/not-found/not-found.module').then(m => m.NotFoundModule)},
   {path: '**', redirectTo: '/notfound'}
 ]
 
