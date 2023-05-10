@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import {MenuItem} from "primeng/api";
+import { MenuItem } from "primeng/api";
 
 @Component({
   selector: 'app-admin-header',
@@ -7,14 +7,9 @@ import {MenuItem} from "primeng/api";
   styleUrls: ['./admin-header.component.css']
 })
 export class AdminHeaderComponent {
-  items: MenuItem[]=[];
+  items: MenuItem[] = [];
 
-  ngOnInit(){
-    // this.items = [
-    //   { label: 'lista pytań', icon: 'pi pi-list', routerLink: 'questionList'},
-    //   { label: 'dodaj pytanie', icon: 'pi pi-plus', routerLink: 'addQuestion'},
-    //   { label: 'nauka', icon: 'pi pi-file-edit', routerLink: 'quiz'},
-    // ];
+  ngOnInit() {
 
     this.items = [
       {
@@ -27,17 +22,17 @@ export class AdminHeaderComponent {
           {label: 'dodaj kursanta', routerLink: '/admin/addStudent'}
         ]
       },
+
       {
         label: 'Instruktorzy', icon: '', items: []
       },
+
       {
         label: 'Pojazdy', icon: '', items: [
           {label: 'Lista pojazdów', icon: '', routerLink: '/admin/vehicles'}
         ]
       },
-
     ];
-
 
   }
 }
